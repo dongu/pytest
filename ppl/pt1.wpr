@@ -1,0 +1,11 @@
+#!wing
+#!version=5.0
+##################################################################
+# Wing IDE project file                                          #
+##################################################################
+[project attributes]
+proj.file-list = [loc('dump_db_file.py'),
+                  loc('initdata.py'),
+                  loc('make_db-pickle.py'),
+                  loc('make_db_file.py')]
+proj.file-type = 'shared'
