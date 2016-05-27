@@ -1,4 +1,3 @@
-
 import  pickle
 
 dbfile = open('people-pickle', 'rb')
