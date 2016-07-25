@@ -4,8 +4,10 @@
 # Wing IDE project file                                          #
 ##################################################################
 [project attributes]
-proj.file-list = [loc('dump_db_file.py'),
-                  loc('initdata.py'),
-                  loc('make_db-pickle.py'),
-                  loc('make_db_file.py')]
+proj.directory-list = [{'dirloc': loc('.'),
+                        'excludes': (),
+                        'filter': u'*',
+                        'include_hidden': False,
+                        'recursive': True,
+                        'watch_for_changes': True}]
 proj.file-type = 'shared'
