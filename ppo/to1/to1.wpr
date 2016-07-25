@@ -1,0 +1,10 @@
+#!wing
+#!version=5.0
+##################################################################
+# Wing IDE project file                                          #
+##################################################################
+[project attributes]
+proj.debug-sub-processes = True
+proj.file-list = [loc('manager.py'),
+                  loc('person_start.py')]
+proj.file-type = 'shared'
