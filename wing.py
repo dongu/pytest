@@ -1,3 +1,4 @@
+
 import sha
 import string
 BASE2  = '01'
@@ -30,36 +31,28 @@ def BaseConvert(number, fromdigits, todigits, ignore_negative = True):
     return res
 
 def SHAToBase30(digest):
-    """Convert from a hexdigest form SHA hash into a more compact and
-        ergonomic BASE30 representation.  This results in a 17 'digit' 
-            number."""
     tdigest = ''.join([ c for i, c in enumerate(digest) if i / 2 * 2 == i ])
     result = BaseConvert(tdigest, BASE16, BASE30)
-
     while len(result) < 17:
         result = '1' + result
-
-
     return result
 
+
 def AddHyphens(code):
-    """Insert hyphens into given license id or activation request to
-    make it easier to read"""
     return code[:5] + '-' + code[5:10] + '-' + code[10:15] + '-' + code[15:]
 
-LicenseID='TNX2Q-2XYPC-ABV68-3T681'
+
+LicenseID='TNX32-G85LC-HG494-7XW6R'
 #Copy the Request Code from the dialog
-RequestCode='RM52E-WE7NA-4XMT7-QPY6G'
+RequestCode='RM51C-XPK18-PM4NN-7WCHT'
+
 hasher = sha.new()
 hasher.update(RequestCode)
 hasher.update(LicenseID)
 digest = hasher.hexdigest().upper()
-lichash = RequestCode[:3] + str( SHAToBase30(digest) )
+lichash = RequestCode[:3] + SHAToBase30(digest)
 lichash=AddHyphens(lichash)
 
-
-
-print "lichash: " ,  lichash
 
 #Calculate the Activation Code
 data=[7,123,23,87]
@@ -71,15 +64,9 @@ for i in data:
     realcode+=format(tmp,'=05X')
     tmp=0
 
-print "realcode: ", realcode
-
 act30=BaseConvert(realcode,BASE16,BASE30)
-print "act30: " + act30
-
 while len(act30) < 17:
     act30 = '1' + act30
 act30='AXX'+act30
 act30=AddHyphens(act30)
-print "The Activation Code is: ", act30
-
-
+print "The Activation Code is: "+act30
