@@ -12,7 +12,8 @@ class Person:
         self.pay *= (1.0+percent )
     
     def __str__(self):
-        return '<%s => %s>' % (self.__class__.__name__, self.name)
+#        return '<%s => %s>' % (self.__class__.__name__, self.name)
+        return '<%s is %d years old, job is %s, Salary[%.2lf] >' % (self.name, self.age, self.job, self.pay ) 
         
         
 if __name__ == '__main__':

@@ -1,10 +1,10 @@
-def countdown(a, n):
+def countdown(s, n):
     if n <= 0:
         print('Blastoff!')
     else:
 #        print(n)
         s.append(n)
-        print(a)
+        print(s)
         countdown(s, n-1) 
     return s
 
